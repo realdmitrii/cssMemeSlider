@@ -1,22 +1,26 @@
 html {
   margin: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(rgb(31, 48, 77) 75%, rgb(11, 11, 20) 88%) no-repeat;
+  background: radial-gradient(#687897, #1c1c27); 
 }
 
+body {
+  height: 100% ;
+}
 
 .slider {
-  max-width: ;width: 50%;
-  height: auto ;
+  width: 50%;
+  min-width: 20rem;
+  max-width: 110vh;
   overflow: hidden;
   display: flex;
   margin: auto;
   margin-top: 2%;
-  padding: 2em 2em 4em;
+  margin-bottom: 2%;
+  padding: 1rem;
   background-color:  #151719;
   border-radius: 2%;
-  row-gap: 3vh;
+  row-gap: 1rem;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -54,14 +58,15 @@ html {
   color: white;
   display: flex;
   flex-basis: 70%;
-  height: 8vh;
+  height: 2.5rem;
   /* width: 50%; */
 }
 
 .slider-text-item {
   display: none;
   color: white;
-  height: 2vh;
+  height: 2rem;
+  font-size: 1rem;
 }
 
 .slider-paginator {
@@ -69,8 +74,7 @@ html {
   flex-basis: 30%;
   margin-right: 0;
   justify-content: flex-end;
-  height: 2vh;
-  
+  height: 2.5rem;
 }
 
 #r1:checked ~ .slider-screen .s1 {
@@ -90,38 +94,75 @@ html {
 }
 
 #r1:checked ~  .slider-text .slider-text1 {
-   transform: scale(1);
-   display: block !important; 
+   display: block ;
+   animation: anime 2s forwards;
    color: white;
 }
 
 #r2:checked ~  .slider-text .slider-text2 {
-  transform: scale(1); 
   display: block; 
+  animation: anime 2s forwards;
   color: white;
 }
 
 #r3:checked ~ .slider-text .slider-text3 {
-  transform: scale(1);
   display: block; 
+  animation: anime 2s forwards;
   color: white;
 }
 
 #r4:checked ~ .slider-text .slider-text4 {
-  transform: scale(1);
   display: block; 
+  animation: anime 2s forwards;
   color: white;
 }
 
 
 .btn {
-  width: 1rem;
   cursor: pointer;
-  background-color: white;
-  opacity: .5;
-  border-radius: 50%;
-  transition: all 0.4s ease;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:  transparent;
 }
+
+
+
+#r1:checked ~ .slider-paginator .btn:nth-child(1) .circle {
+  background: transparent;
+  border: 0.15rem solid #687897;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+#r2:checked ~ .slider-paginator .btn:nth-child(2) .circle {
+  background: transparent;
+  border: 0.15rem solid #687897;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+#r3:checked ~ .slider-paginator .btn:nth-child(3) .circle {
+  background: transparent;
+  border: 0.15rem solid #687897;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+#r4:checked ~ .slider-paginator .btn:nth-child(4) .circle {
+  background: transparent;
+  border: 0.15rem solid #687897;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+  .btn:hover .circle {
+  background-color: #fff;
+  border: 0.15rem solid #fff  !important;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
 
 .slide {
   width: 25%;
@@ -131,4 +172,16 @@ html {
 
 .slider-dot {
   display: none;
+}
+
+@keyframes anime {
+  0% {opacity: 0; }
+  100% {opacity: 1;}
+}
+
+.circle {
+  width: 50%;
+  height: 50%;
+  background-color: #687897;
+  border-radius: 50%;
 }
